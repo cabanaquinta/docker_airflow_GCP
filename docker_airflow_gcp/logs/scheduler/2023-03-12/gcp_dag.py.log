@@ -1,0 +1,44 @@
+[2023-03-12 16:11:11,365] {processor.py:163} INFO - Started process (PID=926) to work on /opt/airflow/dags/gcp_dag.py
+[2023-03-12 16:11:11,374] {processor.py:642} INFO - Processing file /opt/airflow/dags/gcp_dag.py for tasks to queue
+[2023-03-12 16:11:11,382] {logging_mixin.py:109} INFO - [2023-03-12 16:11:11,381] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/gcp_dag.py
+[2023-03-12 16:11:23,326] {processor.py:654} INFO - DAG(s) dict_keys(['data_ingestion_gcs_dag_v1.0']) retrieved from /opt/airflow/dags/gcp_dag.py
+[2023-03-12 16:11:40,938] {logging_mixin.py:109} INFO - [2023-03-12 16:11:40,937] {manager.py:496} INFO - Created Permission View: can edit on DAG:data_ingestion_gcs_dag_v1.0
+[2023-03-12 16:11:40,960] {logging_mixin.py:109} INFO - [2023-03-12 16:11:40,959] {manager.py:496} INFO - Created Permission View: can read on DAG:data_ingestion_gcs_dag_v1.0
+[2023-03-12 16:11:40,963] {logging_mixin.py:109} INFO - [2023-03-12 16:11:40,962] {dag.py:2396} INFO - Sync 1 DAGs
+[2023-03-12 16:11:40,994] {logging_mixin.py:109} INFO - [2023-03-12 16:11:40,993] {dag.py:2415} INFO - Creating ORM DAG for data_ingestion_gcs_dag_v1.0
+[2023-03-12 16:11:41,035] {logging_mixin.py:109} INFO - [2023-03-12 16:11:41,035] {dag.py:2935} INFO - Setting next_dagrun for data_ingestion_gcs_dag_v1.0 to 2023-03-11 00:00:00+00:00
+[2023-03-12 16:11:41,052] {processor.py:174} ERROR - Got an exception! Propagating...
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/processor.py", line 168, in _run_file_processor
+    callback_requests=callback_requests,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/dag_processing/processor.py", line 663, in process_file
+    dagbag.sync_to_db()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 608, in sync_to_db
+    for attempt in run_with_db_retries(logger=self.log):
+  File "/home/airflow/.local/lib/python3.7/site-packages/tenacity/__init__.py", line 382, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/home/airflow/.local/lib/python3.7/site-packages/tenacity/__init__.py", line 349, in iter
+    return fut.result()
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 428, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 622, in sync_to_db
+    DAG.bulk_write_to_db(self.dags.values(), session=session)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dag.py", line 2485, in bulk_write_to_db
+    DagCode.bulk_sync_to_db(filelocs, session=session)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagcode.py", line 107, in bulk_sync_to_db
+    orm_dag_code = DagCode(fileloc, cls._get_code_from_file(fileloc))
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagcode.py", line 168, in _get_code_from_file
+    with open_maybe_zipped(fileloc, 'r') as f:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/file.py", line 97, in open_maybe_zipped
+    return open(fileloc, mode=mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/dags/gcp_dag.py'

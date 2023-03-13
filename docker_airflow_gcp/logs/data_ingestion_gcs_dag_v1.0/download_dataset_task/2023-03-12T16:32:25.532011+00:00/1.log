@@ -1,0 +1,26 @@
+[2023-03-12 16:32:30,881] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.download_dataset_task manual__2023-03-12T16:32:25.532011+00:00 [queued]>
+[2023-03-12 16:32:30,944] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.download_dataset_task manual__2023-03-12T16:32:25.532011+00:00 [queued]>
+[2023-03-12 16:32:30,949] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-12 16:32:30,953] {taskinstance.py:1239} INFO - Starting attempt 1 of 2
+[2023-03-12 16:32:30,956] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-12 16:32:31,021] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-03-12 16:32:25.532011+00:00
+[2023-03-12 16:32:31,040] {standard_task_runner.py:52} INFO - Started process 1286 to run task
+[2023-03-12 16:32:31,051] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag_v1.0', 'download_dataset_task', 'manual__2023-03-12T16:32:25.532011+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpcvkkw_0b', '--error-file', '/tmp/tmpp572sh3u']
+[2023-03-12 16:32:31,055] {standard_task_runner.py:77} INFO - Job 15: Subtask download_dataset_task
+[2023-03-12 16:32:31,256] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_dag_v1.0.download_dataset_task manual__2023-03-12T16:32:25.532011+00:00 [running]> on host 680529fc1021
+[2023-03-12 16:32:31,444] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v1.0
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-03-12T16:32:25.532011+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-12T16:32:25.532011+00:00
+[2023-03-12 16:32:31,450] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-03-12 16:32:31,453] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'curl -sS https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv > /opt/***/winequality-red.csv']
+[2023-03-12 16:32:31,483] {subprocess.py:85} INFO - Output:
+[2023-03-12 16:32:32,924] {subprocess.py:93} INFO - Command exited with return code 0
+[2023-03-12 16:32:33,008] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag_v1.0, task_id=download_dataset_task, execution_date=20230312T163225, start_date=20230312T163230, end_date=20230312T163233
+[2023-03-12 16:32:33,089] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-03-12 16:32:33,241] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check
