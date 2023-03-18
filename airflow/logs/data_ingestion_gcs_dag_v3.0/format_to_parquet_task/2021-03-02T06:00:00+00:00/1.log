@@ -1,0 +1,24 @@
+[2023-03-18 10:23:51,732] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-03-02T06:00:00+00:00 [queued]>
+[2023-03-18 10:23:51,785] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-03-02T06:00:00+00:00 [queued]>
+[2023-03-18 10:23:51,790] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 10:23:51,794] {taskinstance.py:1239} INFO - Starting attempt 1 of 2
+[2023-03-18 10:23:51,797] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 10:23:51,863] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): format_to_parquet_task> on 2021-03-02 06:00:00+00:00
+[2023-03-18 10:23:51,873] {standard_task_runner.py:52} INFO - Started process 2366 to run task
+[2023-03-18 10:23:51,894] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag_v3.0', 'format_to_parquet_task', 'backfill__2021-03-02T06:00:00+00:00', '--job-id', '162', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpif_zkdns', '--error-file', '/tmp/tmpt18ma6sz']
+[2023-03-18 10:23:51,899] {standard_task_runner.py:77} INFO - Job 162: Subtask format_to_parquet_task
+[2023-03-18 10:23:52,246] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-03-02T06:00:00+00:00 [running]> on host 8cface6de844
+[2023-03-18 10:23:52,454] {logging_mixin.py:109} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:152 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2023-03-18 10:23:52,614] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v3.0
+AIRFLOW_CTX_TASK_ID=format_to_parquet_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-03-02T06:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-03-02T06:00:00+00:00
+[2023-03-18 10:23:52,620] {dag.py:41} ERROR - Can only accept source files in CSV format, for the moment
+[2023-03-18 10:23:52,623] {python.py:175} INFO - Done. Returned value was: None
+[2023-03-18 10:23:52,717] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag_v3.0, task_id=format_to_parquet_task, execution_date=20210302T060000, start_date=20230318T102351, end_date=20230318T102352
+[2023-03-18 10:23:52,870] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-03-18 10:23:53,045] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

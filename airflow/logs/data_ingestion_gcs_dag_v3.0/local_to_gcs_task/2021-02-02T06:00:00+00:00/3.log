@@ -1,0 +1,22 @@
+[2023-03-18 11:06:18,904] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [queued]>
+[2023-03-18 11:06:19,385] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [queued]>
+[2023-03-18 11:06:19,407] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 11:06:19,426] {taskinstance.py:1239} INFO - Starting attempt 3 of 4
+[2023-03-18 11:06:19,448] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 11:06:20,284] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): local_to_gcs_task> on 2021-02-02 06:00:00+00:00
+[2023-03-18 11:06:20,517] {standard_task_runner.py:52} INFO - Started process 6316 to run task
+[2023-03-18 11:06:20,960] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag_v3.0', 'local_to_gcs_task', 'backfill__2021-02-02T06:00:00+00:00', '--job-id', '194', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp7m1ms670', '--error-file', '/tmp/tmpxn2_qa7o']
+[2023-03-18 11:06:21,029] {standard_task_runner.py:77} INFO - Job 194: Subtask local_to_gcs_task
+[2023-03-18 11:06:25,074] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [running]> on host 8cface6de844
+[2023-03-18 11:06:28,212] {logging_mixin.py:109} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:152 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2023-03-18 11:06:29,234] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v3.0
+AIRFLOW_CTX_TASK_ID=local_to_gcs_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-02-02T06:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-02-02T06:00:00+00:00
+[2023-03-18 11:06:51,839] {logging_mixin.py:109} INFO - File /opt/***/yellow_tripdata_2021-02.parquet uploaded to <Bucket: dtc_data_lake_dtc-de-378314>.
+[2023-03-18 11:06:51,865] {python.py:175} INFO - Done. Returned value was: None
+[2023-03-18 11:06:52,505] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag_v3.0, task_id=local_to_gcs_task, execution_date=20210202T060000, start_date=20230318T110618, end_date=20230318T110652
