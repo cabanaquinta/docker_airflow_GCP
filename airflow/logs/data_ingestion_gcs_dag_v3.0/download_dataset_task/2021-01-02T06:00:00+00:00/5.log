@@ -1,0 +1,107 @@
+[2023-03-18 10:50:55,058] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.download_dataset_task backfill__2021-01-02T06:00:00+00:00 [queued]>
+[2023-03-18 10:50:55,114] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.download_dataset_task backfill__2021-01-02T06:00:00+00:00 [queued]>
+[2023-03-18 10:50:55,116] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 10:50:55,118] {taskinstance.py:1239} INFO - Starting attempt 5 of 5
+[2023-03-18 10:50:55,128] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 10:50:55,176] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): download_dataset_task> on 2021-01-02 06:00:00+00:00
+[2023-03-18 10:50:55,190] {standard_task_runner.py:52} INFO - Started process 4612 to run task
+[2023-03-18 10:50:55,215] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag_v3.0', 'download_dataset_task', 'backfill__2021-01-02T06:00:00+00:00', '--job-id', '175', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp4xgwhq70', '--error-file', '/tmp/tmpwvnlzovh']
+[2023-03-18 10:50:55,232] {standard_task_runner.py:77} INFO - Job 175: Subtask download_dataset_task
+[2023-03-18 10:50:55,436] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_dag_v3.0.download_dataset_task backfill__2021-01-02T06:00:00+00:00 [running]> on host 8cface6de844
+[2023-03-18 10:50:55,642] {logging_mixin.py:109} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:152 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2023-03-18 10:50:55,730] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v3.0
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-01-02T06:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-01-02T06:00:00+00:00
+[2023-03-18 10:50:55,760] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 77, in read_and_transform_to_parquet
+    df = pd.read_csv(YELLOW_TAXI_CSV_FILE_TEMPLATE)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 645, in get_handle
+    **compression_args,
+  File "/usr/local/lib/python3.7/gzip.py", line 168, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: "/opt/airflow/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.csv.gz"
+[2023-03-18 10:50:55,827] {taskinstance.py:1277} INFO - Marking task as FAILED. dag_id=data_ingestion_gcs_dag_v3.0, task_id=download_dataset_task, execution_date=20210102T060000, start_date=20230318T105055, end_date=20230318T105055
+[2023-03-18 10:50:55,879] {standard_task_runner.py:92} ERROR - Failed to execute job 175 for task download_dataset_task
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 77, in read_and_transform_to_parquet
+    df = pd.read_csv(YELLOW_TAXI_CSV_FILE_TEMPLATE)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__
+    self._open_handles(src, kwds)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py", line 229, in _open_handles
+    errors=kwds.get("encoding_errors", "strict"),
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/common.py", line 645, in get_handle
+    **compression_args,
+  File "/usr/local/lib/python3.7/gzip.py", line 168, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: "/opt/airflow/yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.csv.gz"
+[2023-03-18 10:50:55,918] {local_task_job.py:154} INFO - Task exited with return code 1
+[2023-03-18 10:50:56,013] {dagrun.py:628} WARNING - Failed to get task '<TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-01-02T06:00:00+00:00 [removed]>' for dag 'data_ingestion_gcs_dag_v3.0'. Marking it as removed.
+[2023-03-18 10:50:56,020] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-03-18 10:50:56,074] {dagrun.py:628} WARNING - Failed to get task '<TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-01-02T06:00:00+00:00 [removed]>' for dag 'data_ingestion_gcs_dag_v3.0'. Marking it as removed.
+[2023-03-18 10:50:56,080] {dagrun.py:566} ERROR - Deadlock; marking run <DagRun data_ingestion_gcs_dag_v3.0 @ 2021-01-02 06:00:00+00:00: backfill__2021-01-02T06:00:00+00:00, externally triggered: False> failed
+[2023-03-18 10:50:56,083] {dagrun.py:605} INFO - DagRun Finished: dag_id=data_ingestion_gcs_dag_v3.0, execution_date=2021-01-02 06:00:00+00:00, run_id=backfill__2021-01-02T06:00:00+00:00, run_start_date=None, run_end_date=2023-03-18 10:50:56.083450+00:00, run_duration=None, state=failed, external_trigger=False, run_type=backfill, data_interval_start=2021-01-02 06:00:00+00:00, data_interval_end=2021-02-02 06:00:00+00:00, dag_hash=None
+[2023-03-18 10:50:56,086] {dagrun.py:749} WARNING - Failed to record duration of <DagRun data_ingestion_gcs_dag_v3.0 @ 2021-01-02 06:00:00+00:00: backfill__2021-01-02T06:00:00+00:00, externally triggered: False>: start_date is not set.

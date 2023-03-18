@@ -8,10 +8,14 @@ mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 
-## Init docker compose
+## Start Airflow
 
 ```bash
-docker compose build
+cd airflow
+```
+
+```bash
+docker build . --tag extending_airflow:latest
 ```
 
 ```bash

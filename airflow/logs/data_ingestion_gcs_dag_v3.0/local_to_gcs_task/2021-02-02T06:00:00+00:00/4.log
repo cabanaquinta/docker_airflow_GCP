@@ -1,0 +1,28 @@
+[2023-03-18 14:18:31,729] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [queued]>
+[2023-03-18 14:18:32,168] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [queued]>
+[2023-03-18 14:18:32,172] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 14:18:32,177] {taskinstance.py:1239} INFO - Starting attempt 4 of 5
+[2023-03-18 14:18:32,181] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2023-03-18 14:18:32,499] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): local_to_gcs_task> on 2021-02-02 06:00:00+00:00
+[2023-03-18 14:18:32,567] {standard_task_runner.py:52} INFO - Started process 1325 to run task
+[2023-03-18 14:18:32,679] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag_v3.0', 'local_to_gcs_task', 'backfill__2021-02-02T06:00:00+00:00', '--job-id', '201', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpj9p7adpm', '--error-file', '/tmp/tmpj3hb63f8']
+[2023-03-18 14:18:32,685] {standard_task_runner.py:77} INFO - Job 201: Subtask local_to_gcs_task
+[2023-03-18 14:18:33,597] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-02-02T06:00:00+00:00 [running]> on host 8cface6de844
+[2023-03-18 14:18:34,785] {logging_mixin.py:109} WARNING - /home/***/.local/lib/python3.7/site-packages/***/utils/context.py:152 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2023-03-18 14:18:35,517] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v3.0
+AIRFLOW_CTX_TASK_ID=local_to_gcs_task
+AIRFLOW_CTX_EXECUTION_DATE=2021-02-02T06:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=backfill__2021-02-02T06:00:00+00:00
+[2023-03-18 14:18:51,791] {logging_mixin.py:109} INFO - File /opt/***/yellow_tripdata_2021-02.parquet uploaded to <Bucket: dtc_data_lake_dtc-de-378314>.
+[2023-03-18 14:18:51,812] {python.py:175} INFO - Done. Returned value was: None
+[2023-03-18 14:18:52,281] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag_v3.0, task_id=local_to_gcs_task, execution_date=20210202T060000, start_date=20230318T141831, end_date=20230318T141852
+[2023-03-18 14:18:53,472] {local_task_job.py:154} INFO - Task exited with return code 0
+[2023-03-18 14:18:54,494] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-03-18 14:18:54,999] {dagrun.py:628} WARNING - Failed to get task '<TaskInstance: data_ingestion_gcs_dag_v3.0.format_to_parquet_task backfill__2021-02-02T06:00:00+00:00 [removed]>' for dag 'data_ingestion_gcs_dag_v3.0'. Marking it as removed.
+[2023-03-18 14:18:55,031] {dagrun.py:545} INFO - Marking run <DagRun data_ingestion_gcs_dag_v3.0 @ 2021-02-02 06:00:00+00:00: backfill__2021-02-02T06:00:00+00:00, externally triggered: False> successful
+[2023-03-18 14:18:55,060] {dagrun.py:605} INFO - DagRun Finished: dag_id=data_ingestion_gcs_dag_v3.0, execution_date=2021-02-02 06:00:00+00:00, run_id=backfill__2021-02-02T06:00:00+00:00, run_start_date=None, run_end_date=2023-03-18 14:18:55.056925+00:00, run_duration=None, state=success, external_trigger=False, run_type=backfill, data_interval_start=2021-02-02 06:00:00+00:00, data_interval_end=2021-03-02 06:00:00+00:00, dag_hash=None
+[2023-03-18 14:18:55,097] {dagrun.py:749} WARNING - Failed to record duration of <DagRun data_ingestion_gcs_dag_v3.0 @ 2021-02-02 06:00:00+00:00: backfill__2021-02-02T06:00:00+00:00, externally triggered: False>: start_date is not set.
