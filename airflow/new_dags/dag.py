@@ -1,29 +1,23 @@
 import os
-from datetime import datetime, timedelta
-
 import pandas as pd
+from datetime import datetime, timedelta
 from airflow.operators.python import PythonOperator
 from google.cloud import storage
-
 from airflow import DAG
 
 # VARIABLES
 PROJECT_ID = os.environ.get('GCP_PROJECT_ID')
 BUCKET = os.environ.get('GCP_GCS_BUCKET')
-
 URL_PREFIX = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow'
 AIRFLOW_HOME = '/opt/airflow'
-
 YELLOW_TAXI_URL_TEMPLATE = URL_PREFIX + \
     '/yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.csv.gz'
-# YELLOW_TAXI_CSV_FILE_TEMPLATE = AIRFLOW_HOME + \
-#     '/yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.csv.gz'
 YELLOW_TAXI_PARQUET_FILE_TEMPLATE = AIRFLOW_HOME + \
     '/yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.parquet'
 YELLOW_TAXI_GCP_PATH_TEMPLATE = 'raw/yellow_tripdata/{{ execution_date.strftime(\'%Y\') }}/{{ execution_date.strftime(\'%m\') }}'
 
 
-def upload_to_gcs(bucket, object_name, local_file):
+def upload_to_gcs(bucket: str, object_name: str, local_file: str) -> None:
     """Upload to Bucket"""
     client = storage.Client()
     bucket = client.bucket(bucket)
