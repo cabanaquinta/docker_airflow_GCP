@@ -37,6 +37,10 @@ def format_to_parquet(src_file, destination_file):
     pq.write_table(table, destination_file)
 
 
+# Comment
+print('hi')
+
+
 def upload_to_gcs(bucket, object_name, local_file):
     print('uploading to gcs')
     client = storage.Client()
