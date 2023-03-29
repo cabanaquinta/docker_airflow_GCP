@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "airflow_gcp_docker"}]
 
 [tool.poetry.dependencies]
-python = ">=3.8.0"
+python = "3.11"
 pandas = ">=1.2.4"
 
 [tool.poetry.group.dev.dependencies]
