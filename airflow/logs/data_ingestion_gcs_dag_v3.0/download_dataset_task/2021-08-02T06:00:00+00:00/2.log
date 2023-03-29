@@ -1,9 +1,9 @@
 [2023-03-18 14:38:31,041] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.download_dataset_task backfill__2021-08-02T06:00:00+00:00 [queued]>
 [2023-03-18 14:38:31,163] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.download_dataset_task backfill__2021-08-02T06:00:00+00:00 [queued]>
-[2023-03-18 14:38:31,166] {taskinstance.py:1238} INFO - 
+[2023-03-18 14:38:31,166] {taskinstance.py:1238} INFO -
 --------------------------------------------------------------------------------
 [2023-03-18 14:38:31,172] {taskinstance.py:1239} INFO - Starting attempt 2 of 5
-[2023-03-18 14:38:31,176] {taskinstance.py:1240} INFO - 
+[2023-03-18 14:38:31,176] {taskinstance.py:1240} INFO -
 --------------------------------------------------------------------------------
 [2023-03-18 14:38:31,359] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): download_dataset_task> on 2021-08-02 06:00:00+00:00
 [2023-03-18 14:38:31,389] {standard_task_runner.py:52} INFO - Started process 3299 to run task

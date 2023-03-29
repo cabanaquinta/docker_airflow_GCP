@@ -1,0 +1,99 @@
+[2023-03-29 13:46:45,731] {processor.py:163} INFO - Started process (PID=366) to work on /opt/airflow/dags/dag.py
+[2023-03-29 13:46:45,809] {processor.py:642} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2023-03-29 13:46:45,886] {logging_mixin.py:109} INFO - [2023-03-29 13:46:45,871] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2023-03-29 13:47:18,298] {logging_mixin.py:109} INFO - [2023-03-29 13:47:18,256] {timeout.py:36} ERROR - Process timed out, PID: 366
+[2023-03-29 13:47:18,467] {logging_mixin.py:109} INFO - [2023-03-29 13:47:18,323] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag.py", line 4, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/compat/__init__.py", line 23, in <module>
+    from pandas.compat.pyarrow import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/compat/pyarrow.py", line 6, in <module>
+    import pyarrow as pa
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/__init__.py", line 360, in <module>
+    DictionaryValue = _deprecate_scalar("Dictionary", DictionaryScalar)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/__init__.py", line 328, in _deprecate_scalar
+    return _deprecate_class("{}Value".format(ty), symbol, "1.0.0")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/util.py", line 56, in _deprecate_class
+    class _DeprecatedMeta(type):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/timeout.py", line 37, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#reducing-dag-complexity, PID: 366
+[2023-03-29 13:47:19,004] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/dag.py
+[2023-03-29 13:47:19,347] {processor.py:171} INFO - Processing /opt/airflow/dags/dag.py took 33.797 seconds
+[2023-03-29 13:47:52,171] {processor.py:163} INFO - Started process (PID=434) to work on /opt/airflow/dags/dag.py
+[2023-03-29 13:47:52,261] {processor.py:642} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2023-03-29 13:47:52,351] {logging_mixin.py:109} INFO - [2023-03-29 13:47:52,319] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2023-03-29 13:48:27,202] {logging_mixin.py:109} INFO - [2023-03-29 13:48:27,151] {timeout.py:36} ERROR - Process timed out, PID: 434
+[2023-03-29 13:48:27,811] {logging_mixin.py:109} INFO - [2023-03-29 13:48:27,306] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag.py", line 4, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/__init__.py", line 22, in <module>
+    from pandas.compat import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/compat/__init__.py", line 15, in <module>
+    from pandas.compat.numpy import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/compat/numpy/__init__.py", line 7, in <module>
+    from pandas.util.version import Version
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/util/__init__.py", line 7, in <module>
+    from pandas.core.util.hashing import (  # noqa
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/util/hashing.py", line 24, in <module>
+    from pandas.core.dtypes.common import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/dtypes/common.py", line 27, in <module>
+    from pandas.core.dtypes.dtypes import (
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/dtypes/dtypes.py", line 808, in <module>
+    class PeriodDtype(dtypes.PeriodDtypeBase, PandasExtensionDtype):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/dtypes/dtypes.py", line 927, in PeriodDtype
+    @property
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/timeout.py", line 37, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#reducing-dag-complexity, PID: 434
+[2023-03-29 13:48:29,284] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/dag.py
+[2023-03-29 13:48:29,805] {processor.py:171} INFO - Processing /opt/airflow/dags/dag.py took 37.888 seconds
+[2023-03-29 13:49:04,714] {processor.py:163} INFO - Started process (PID=491) to work on /opt/airflow/dags/dag.py
+[2023-03-29 13:49:04,820] {processor.py:642} INFO - Processing file /opt/airflow/dags/dag.py for tasks to queue
+[2023-03-29 13:49:04,842] {logging_mixin.py:109} INFO - [2023-03-29 13:49:04,841] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/dag.py
+[2023-03-29 13:49:35,921] {logging_mixin.py:109} INFO - [2023-03-29 13:49:35,547] {timeout.py:36} ERROR - Process timed out, PID: 491
+[2023-03-29 13:49:36,341] {logging_mixin.py:109} INFO - [2023-03-29 13:49:35,947] {dagbag.py:334} ERROR - Failed to import: /opt/airflow/dags/dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 331, in _load_modules_from_file
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag.py", line 4, in <module>
+    import pandas as pd
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/__init__.py", line 11, in <module>
+    __import__(dependency)
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/__init__.py", line 155, in <module>
+    from . import polynomial
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/polynomial/__init__.py", line 117, in <module>
+    from .polynomial import Polynomial
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/polynomial/polynomial.py", line 1471, in <module>
+    class Polynomial(ABCPolyBase):
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/polynomial/polynomial.py", line 1508, in Polynomial
+    domain = np.array(polydomain)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/timeout.py", line 37, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.2.3/best-practices.html#reducing-dag-complexity, PID: 491
+[2023-03-29 13:49:38,371] {processor.py:656} WARNING - No viable dags retrieved from /opt/airflow/dags/dag.py
+[2023-03-29 13:49:39,256] {processor.py:171} INFO - Processing /opt/airflow/dags/dag.py took 34.609 seconds
+[2023-03-29 13:51:07,033] {processor.py:163} INFO - Started process (PID=566) to work on /opt/airflow/dags/dag.py

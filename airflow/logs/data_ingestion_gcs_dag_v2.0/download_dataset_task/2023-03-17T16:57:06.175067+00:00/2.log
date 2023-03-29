@@ -1,9 +1,9 @@
 [2023-03-17 17:02:21,525] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v2.0.download_dataset_task manual__2023-03-17T16:57:06.175067+00:00 [queued]>
 [2023-03-17 17:02:21,564] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v2.0.download_dataset_task manual__2023-03-17T16:57:06.175067+00:00 [queued]>
-[2023-03-17 17:02:21,567] {taskinstance.py:1238} INFO - 
+[2023-03-17 17:02:21,567] {taskinstance.py:1238} INFO -
 --------------------------------------------------------------------------------
 [2023-03-17 17:02:21,569] {taskinstance.py:1239} INFO - Starting attempt 2 of 2
-[2023-03-17 17:02:21,570] {taskinstance.py:1240} INFO - 
+[2023-03-17 17:02:21,570] {taskinstance.py:1240} INFO -
 --------------------------------------------------------------------------------
 [2023-03-17 17:02:21,611] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-03-17 16:57:06.175067+00:00
 [2023-03-17 17:02:21,634] {standard_task_runner.py:52} INFO - Started process 2671 to run task
@@ -17,7 +17,7 @@ AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v2.0
 AIRFLOW_CTX_TASK_ID=download_dataset_task
 AIRFLOW_CTX_EXECUTION_DATE=2023-03-17T16:57:06.175067+00:00
 AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-17T16:57:06.175067+00:00
-[2023-03-17 17:02:22,283] {subprocess.py:62} INFO - Tmp dir root location: 
+[2023-03-17 17:02:22,283] {subprocess.py:62} INFO - Tmp dir root location:
  /tmp
 [2023-03-17 17:02:22,288] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'curl -sSLf https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2023-03.csv > /opt/***/yellow_tripdata_2023-03.csv']
 [2023-03-17 17:02:22,318] {subprocess.py:85} INFO - Output:

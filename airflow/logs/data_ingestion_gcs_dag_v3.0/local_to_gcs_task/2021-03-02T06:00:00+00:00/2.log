@@ -1,9 +1,9 @@
 [2023-03-18 10:29:08,963] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-03-02T06:00:00+00:00 [queued]>
 [2023-03-18 10:29:09,027] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v3.0.local_to_gcs_task backfill__2021-03-02T06:00:00+00:00 [queued]>
-[2023-03-18 10:29:09,031] {taskinstance.py:1238} INFO - 
+[2023-03-18 10:29:09,031] {taskinstance.py:1238} INFO -
 --------------------------------------------------------------------------------
 [2023-03-18 10:29:09,038] {taskinstance.py:1239} INFO - Starting attempt 2 of 2
-[2023-03-18 10:29:09,043] {taskinstance.py:1240} INFO - 
+[2023-03-18 10:29:09,043] {taskinstance.py:1240} INFO -
 --------------------------------------------------------------------------------
 [2023-03-18 10:29:09,123] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): local_to_gcs_task> on 2021-03-02 06:00:00+00:00
 [2023-03-18 10:29:09,140] {standard_task_runner.py:52} INFO - Started process 2753 to run task
