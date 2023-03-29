@@ -7,8 +7,9 @@ readme = "README.md"
 packages = [{include = "airflow_gcp_docker"}]
 
 [tool.poetry.dependencies]
-python = ">=3.11"
+python = "3.9.1"
 pandas = ">=1.2.4"
+matplotlib ="*"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
@@ -19,3 +20,6 @@ pre-commit = "^3.0.4"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+line_length = 150
