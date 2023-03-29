@@ -1,9 +1,9 @@
 [2023-03-12 16:48:13,231] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.download_dataset_task manual__2023-03-12T16:48:08.085865+00:00 [queued]>
 [2023-03-12 16:48:13,276] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.download_dataset_task manual__2023-03-12T16:48:08.085865+00:00 [queued]>
-[2023-03-12 16:48:13,278] {taskinstance.py:1238} INFO - 
+[2023-03-12 16:48:13,278] {taskinstance.py:1238} INFO -
 --------------------------------------------------------------------------------
 [2023-03-12 16:48:13,321] {taskinstance.py:1239} INFO - Starting attempt 1 of 2
-[2023-03-12 16:48:13,324] {taskinstance.py:1240} INFO - 
+[2023-03-12 16:48:13,324] {taskinstance.py:1240} INFO -
 --------------------------------------------------------------------------------
 [2023-03-12 16:48:13,377] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-03-12 16:48:08.085865+00:00
 [2023-03-12 16:48:13,391] {standard_task_runner.py:52} INFO - Started process 2424 to run task
@@ -16,7 +16,7 @@ AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_dag_v1.0
 AIRFLOW_CTX_TASK_ID=download_dataset_task
 AIRFLOW_CTX_EXECUTION_DATE=2023-03-12T16:48:08.085865+00:00
 AIRFLOW_CTX_DAG_RUN_ID=manual__2023-03-12T16:48:08.085865+00:00
-[2023-03-12 16:48:13,937] {subprocess.py:62} INFO - Tmp dir root location: 
+[2023-03-12 16:48:13,937] {subprocess.py:62} INFO - Tmp dir root location:
  /tmp
 [2023-03-12 16:48:13,941] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'curl -sS https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv > /opt/***/winequality-red.csv']
 [2023-03-12 16:48:14,020] {subprocess.py:85} INFO - Output:

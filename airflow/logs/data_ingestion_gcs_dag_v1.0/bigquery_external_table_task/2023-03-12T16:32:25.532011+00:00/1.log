@@ -1,9 +1,9 @@
 [2023-03-12 16:32:51,327] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.bigquery_external_table_task manual__2023-03-12T16:32:25.532011+00:00 [queued]>
 [2023-03-12 16:32:51,377] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_dag_v1.0.bigquery_external_table_task manual__2023-03-12T16:32:25.532011+00:00 [queued]>
-[2023-03-12 16:32:51,380] {taskinstance.py:1238} INFO - 
+[2023-03-12 16:32:51,380] {taskinstance.py:1238} INFO -
 --------------------------------------------------------------------------------
 [2023-03-12 16:32:51,381] {taskinstance.py:1239} INFO - Starting attempt 1 of 2
-[2023-03-12 16:32:51,382] {taskinstance.py:1240} INFO - 
+[2023-03-12 16:32:51,382] {taskinstance.py:1240} INFO -
 --------------------------------------------------------------------------------
 [2023-03-12 16:32:51,427] {taskinstance.py:1259} INFO - Executing <Task(BigQueryCreateExternalTableOperator): bigquery_external_table_task> on 2023-03-12 16:32:25.532011+00:00
 [2023-03-12 16:32:51,439] {standard_task_runner.py:52} INFO - Started process 1346 to run task
