@@ -15,7 +15,7 @@ jobs:
               id: setup-python
               uses: actions/setup-python@v3
               with:
-                  python-version: "3.9"
+                  python-version: "3.9.1"
             #----------------------------------------------
             #  -----  install & configure poetry  -----
             #----------------------------------------------
