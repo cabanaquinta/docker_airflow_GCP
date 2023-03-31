@@ -14,7 +14,7 @@ matplotlib ="*"
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
 flake8 = "^5.0"
-pre-commit = "^3.0.4"
+pre-commit = "^3.2.1"
 
 
 [build-system]
