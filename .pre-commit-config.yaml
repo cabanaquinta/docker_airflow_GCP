@@ -10,12 +10,6 @@ repos:
             language: system
             types: [python]
             files: airflow/dags.*
-          # - id: mypy
-          #   name: mypy
-          #   entry: poetry run mypy
-          #   language: system
-          #   types: [python]
-          #   files: airflow/dags.*
           - id: isort
             name: isort
             entry: poetry run isort

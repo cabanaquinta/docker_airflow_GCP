@@ -11,8 +11,9 @@ from google.cloud import storage
 from airflow import DAG
 
 # VARIABLES
-PROJECT_ID = os.environ.get('GCP_PROJECT_ID')
 BUCKET = os.environ.get('GCP_GCS_BUCKET')
+PROJECT_ID = os.environ.get('GCP_PROJECT_ID')
+
 
 URL_PREFIX = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow'
 AIRFLOW_HOME = '/opt/airflow'
@@ -36,7 +37,12 @@ def format_to_parquet(src_file, destination_file):
     pq.write_table(table, destination_file)
 
 
+# Comment
+print('hi')
+
+
 def upload_to_gcs(bucket, object_name, local_file):
+    print('uploading to gcs')
     client = storage.Client()
     bucket = client.bucket(bucket)
     blob = bucket.blob(object_name)

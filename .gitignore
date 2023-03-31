@@ -9,6 +9,8 @@ airflow/connections/*
 airflow/pools/*
 airflow/variables/*
 
+# Terraform
+terraform/.terraform/*
 # Ignore all .pyc files
 *.pyc
 
